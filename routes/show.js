@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const File = require('../models/File');
+const File = require('../models/file');
 
 // : for dynamic paramter
 router.get('/:uuid', async (req, res) => {
