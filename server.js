@@ -2,16 +2,16 @@ const dotenv = require('dotenv');
 const express = require('express');
 const path = require('path');
 const app = express();
-// const cors = require('cors');
+const cors = require('cors');
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 // Cors
-// const corsOptions = {
-//     origin : process.env.ALLOWED_CLIENTS.split(',')
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+    origin : process.env.ALLOWED_CLIENTS
+};
+app.use(cors(corsOptions));
 
 app.use(express.static('public'));
 app.use(express.json());
